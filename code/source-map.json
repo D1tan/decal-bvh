@@ -126,7 +126,7 @@
     {
       "path": "Engine/Source/Runtime/Renderer/Private/DecalRenderingShared.cpp",
       "line": 314,
-      "purpose": "Guard proxy readers; task below captures snapshot by value"
+      "purpose": "Count active proxy readers; task below captures snapshot by value"
     },
     {
       "path": "Engine/Source/Runtime/Renderer/Private/DecalRenderingShared.cpp",
