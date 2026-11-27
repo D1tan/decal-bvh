@@ -2,12 +2,6 @@
 
 [Live demo](https://d1tan.github.io/decal-bvh/) · [Measured data](assets/scalability-results.json)
 
-## One minute
-
-1. **0–15 s:** play the comparison; use **Placement** to show the real layout.
-2. **15–45 s:** CPU cost rises with the default scan; BVH stays near 0.05 ms and roughly 400 FPS.
-3. **45–60 s:** explain whole-node rejection using the one-line pseudocode. Original UE filters and order are preserved.
-
 <!-- BEGIN SCALABILITY -->
 ## Scalability
 
