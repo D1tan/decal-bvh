@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A one-minute look at CPU decal culling in Unreal Engine.">
+  <title>Decal BVH — One Minute</title>
+  <link rel="icon" href="data:,"><link rel="stylesheet" href="pitch.css">
+  <script src="assets/scalability-results.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<header><h1>Decal BVH</h1><a href="https://github.com/D1tan/decal-bvh#readme">README</a></header>
+<main id="top">
+  <p class="intro">Skip off-screen decals before the original UE visibility checks.</p>
+  <section class="effect" aria-label="In-engine result">
+    <figure><div id="comparison-media"><video controls muted playsinline preload="metadata" poster="assets/scale-poster.webp" aria-label="Default scan on the left; BVH on the right"><source src="assets/scale-comparison.mp4" type="video/mp4"></video></div><div id="placement-media" hidden><a href="assets/placement.svg" target="_blank" rel="noopener"><img src="assets/placement.svg" alt="Actual district layout from saved placement coordinates"></a><a href="assets/placement-closeup.webp" target="_blank" rel="noopener"><img src="assets/placement-closeup.webp" alt="One real remote wall with a 64 by 64 decal grid"></a></div><figcaption><span id="media-caption">Default (left) / BVH (right)</span><button id="media-toggle" aria-pressed="false">Placement</button><span id="media-note">Real-time capture · recording adds overhead</span></figcaption></figure>
+    <div class="results"><p class="case">1,048,576 loaded decals</p><div class="metric"><span>Decal CPU</span><strong><span id="cpu-before">24.821</span> <i>→</i> <b id="cpu-after">0.052</b><small> ms</small></strong></div><div class="metric frame"><span>Frame rate</span><strong><span id="fps-before">37.2</span> <i>→</i> <b id="fps-after">428.1</b><small> FPS</small></strong></div><p class="scope">3 runs × 600 frames/mode · unrecorded</p></div>
+  </section>
+  <section class="scaling" aria-label="Measured scalability">
+    <div class="section-heading"><h2>Same view. More loaded decals.</h2><div class="legend" aria-label="Chart legend"><span class="default">Default</span><span class="bvh">BVH</span></div></div>
+    <div class="plots">
+      <figure><h3>Decal CPU <span>ms · lower is better</span></h3><a href="assets/scalability-cpu.svg" target="_blank" rel="noopener" aria-label="Open full-size CPU chart"><img src="assets/scalability-cpu-web.svg" alt="Default CPU cost grows from 2.059 to 24.821 ms; BVH stays near 0.05 ms"></a></figure>
+      <figure><h3>Frame rate <span>FPS · higher is better</span></h3><a href="assets/scalability-fps.svg" target="_blank" rel="noopener" aria-label="Open full-size frame-rate chart"><img src="assets/scalability-fps-web.svg" alt="Default frame rate falls from 265.0 to 37.2 FPS; BVH stays between 393.7 and 436.6 FPS across measured sizes"></a></figure>
+    </div>
+    <p class="chart-note">5 sizes · 3 runs × 600 frames · whiskers: run min–max · dotted line: 60 FPS · K = 1,024 decals</p>
+  </section>
+  <div class="core"><span>Core · pseudocode</span><code>if (!intersects(view, node.bounds)) return;</code><span>Keep original UE filters and order.</span></div>
+  <footer><p>Static, low-visibility stress test · D3D12 / 1080p. Frequent updates can regress. Method and data in README.</p></footer>
+</main>
+<noscript><p>The video, charts and measured results work without JavaScript.</p></noscript>
+</body>
+</html>
