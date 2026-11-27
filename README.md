@@ -2,6 +2,12 @@
 
 [Live demo](https://d1tan.github.io/decal-bvh/) · [Measured data](assets/scalability-results.json)
 
+## Camera and scene
+
+<a href="assets/placement-overview.png"><img src="assets/placement-overview.png" width="380" alt="Native UE scene overview"></a> <a href="assets/placement.svg"><img src="assets/placement.svg" width="380" alt="Benchmark camera position and viewing direction"></a>
+
+128 local decals near the camera; 1,048,448 on remote walls behind it. Overview is layout-only, with decal drawing disabled. Click either image to inspect.
+
 <!-- BEGIN SCALABILITY -->
 ## Scalability
 
@@ -33,6 +39,8 @@ The million-decal scene has 128 local decals and 1,048,448 on 256 remote walls. 
 Video uses own-window capture at a requested 60 FPS ceiling with preserved timestamps and no speed changes. Its HUD is live; headline/charts come from separate unrecorded runs. Recording adds overhead. Inspection views are excluded from timing.
 
 ## Run locally
+
+`index.html` is the webpage entry point. `app.js` fills the statistics and switches views; the UE footage is recorded video.
 
 Clone this repository and open `index.html`, or serve the folder:
 
