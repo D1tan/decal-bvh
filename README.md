@@ -2,6 +2,15 @@
 
 [Live demo](https://d1tan.github.io/decal-bvh/) · [Measured data](assets/scalability-results.json)
 
+## Core implementation
+
+[Actual C++ excerpts](code/core-excerpts.cpp) · [Integration notes](code/README.md)
+
+- **Cache geometry:** reuse an immutable render-thread snapshot until invalidated.
+- **Prune groups:** median-split BVH rejects off-screen nodes instead of scanning every decal.
+- **Preserve results:** restore scene order, then keep UE's original filters and stage sorting.
+- **Handle difficult cases:** retain conservative candidates and fall back when indexing is unsuitable.
+
 ## Camera and scene
 
 <a href="assets/placement-overview.png"><img src="assets/placement-overview.png" width="380" alt="Native UE scene overview"></a> <a href="assets/placement.svg"><img src="assets/placement.svg" width="380" alt="Benchmark camera position and viewing direction"></a>

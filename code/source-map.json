@@ -1,0 +1,139 @@
+{
+  "basis": "source_direct",
+  "build_context": "Local UE 5.7.3 Renderer integration used for the reported measurements",
+  "published_file": "core-excerpts.cpp",
+  "total_lines_including_annotations": 30,
+  "source_lines_copied_verbatim": true,
+  "regions": [
+    {
+      "source": "Engine/Source/Runtime/Renderer/Private/DecalSpatialIndex.cpp",
+      "source_lines": [
+        1,
+        1
+      ],
+      "published_lines": [
+        1,
+        1
+      ],
+      "block_sha256": "be77533a55f3998bb3bf9bfd7815e908098f33022dc8f7035caa6efad8273b9d"
+    },
+    {
+      "source": "Engine/Source/Runtime/Renderer/Private/DecalSpatialIndex.cpp",
+      "source_lines": [
+        90,
+        96
+      ],
+      "published_lines": [
+        4,
+        10
+      ],
+      "block_sha256": "d420ada7dcfba17334ecbbbe65109d979cad961403f40cc045f9fa313e57788a"
+    },
+    {
+      "source": "Engine/Source/Runtime/Renderer/Private/DecalSpatialIndex.cpp",
+      "source_lines": [
+        165,
+        174
+      ],
+      "published_lines": [
+        12,
+        21
+      ],
+      "block_sha256": "5a63c96b1f1ad7cb772b879ce0ec9e6a7439c7db591690aa99b1d121f2acc31f"
+    },
+    {
+      "source": "Engine/Source/Runtime/Renderer/Private/DecalRenderingShared.cpp",
+      "source_lines": [
+        115,
+        116
+      ],
+      "published_lines": [
+        23,
+        24
+      ],
+      "block_sha256": "c0742a464c24283c4f1fdd4de57656955442045f611f695dd9e590a4a4b51ddd"
+    },
+    {
+      "source": "Engine/Source/Runtime/Renderer/Private/DecalRenderingShared.cpp",
+      "source_lines": [
+        128,
+        129
+      ],
+      "published_lines": [
+        26,
+        27
+      ],
+      "block_sha256": "b2c1d6c4ce54105563f59aec169ce07abfbc668d421929d92805d500f7c50ed9"
+    },
+    {
+      "source": "Engine/Source/Runtime/Renderer/Private/DecalRenderingShared.cpp",
+      "source_lines": [
+        132,
+        132
+      ],
+      "published_lines": [
+        28,
+        28
+      ],
+      "block_sha256": "e6b04491469722e8363a94e4044538e013a2a217e36b1e568ba60acb7b4c8f2e"
+    },
+    {
+      "source": "Engine/Source/Runtime/Renderer/Private/DecalSpatialIndex.cpp",
+      "source_lines": [
+        180,
+        180
+      ],
+      "published_lines": [
+        30,
+        30
+      ],
+      "block_sha256": "9355bdf10aa40c4f3c091df16479f8678701310199cd1bb511f1ad29730897d0"
+    }
+  ],
+  "measured_artifact_checks": [
+    {
+      "file": "Engine/Binaries/Win64/UnrealEditor-Renderer.dll",
+      "sha256": "d0723a42cbb235c455b1bc34169c9a09a8670c4a00c307514505572569e25721",
+      "unchanged": true
+    },
+    {
+      "file": "Engine/Source/Runtime/Renderer/Private/DecalRenderingShared.cpp",
+      "sha256": "753df121f0b811053dafd0bf7fc7479bf76cb70fc37324338c3f12a934d016b0",
+      "unchanged": true
+    },
+    {
+      "file": "Engine/Source/Runtime/Renderer/Private/DecalSpatialIndex.cpp",
+      "sha256": "67b1d284b2b827622a564f80abde09707a6e2c822b8def476c1d58359183d781",
+      "unchanged": true
+    }
+  ],
+  "related_locations": [
+    {
+      "path": "Engine/Source/Runtime/Renderer/Private/DecalSpatialIndex.cpp",
+      "line": 17,
+      "purpose": "Conservative padded bounds"
+    },
+    {
+      "path": "Engine/Source/Runtime/Renderer/Private/DecalSpatialIndex.cpp",
+      "line": 86,
+      "purpose": "Choose largest center span before median partition"
+    },
+    {
+      "path": "Engine/Source/Runtime/Renderer/Private/DecalRenderingShared.cpp",
+      "line": 205,
+      "purpose": "Prepare snapshot before task allocation"
+    },
+    {
+      "path": "Engine/Source/Runtime/Renderer/Private/DecalRenderingShared.cpp",
+      "line": 314,
+      "purpose": "Guard proxy readers; task below captures snapshot by value"
+    },
+    {
+      "path": "Engine/Source/Runtime/Renderer/Private/DecalRenderingShared.cpp",
+      "line": 1127,
+      "purpose": "Run original exact visibility helper on candidates"
+    }
+  ],
+  "publication_scope": "Selected source lines for discussing the optimization, not the complete Renderer patch.",
+  "terms_reference": "https://www.unrealengine.com/eula/unreal"
+}
